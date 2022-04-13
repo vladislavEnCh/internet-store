@@ -1,5 +1,10 @@
 # InternetStore
-
+Что здесь сделано:{
+  Admin меню,
+  Авторизация,
+  Можно добавлять товар, описание, х-ки, фото товара через Админ панель, 
+  В качестве БД используеться FireBase
+}
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
 
 ## Development server
