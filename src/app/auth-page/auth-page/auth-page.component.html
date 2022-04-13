@@ -1,0 +1,39 @@
+<div class="container">
+  <form [formGroup]="authForm">
+    <h2>Login and register</h2>
+    <div class="form-control">
+      <label for="email">Email:</label>
+      <input type="email" formControlName="email" />
+      <!-- <div
+            class="validation"
+            *ngIf="
+            authForm.get('email')?.touched &&
+            authForm.get('email')?.invalid
+            "
+          > -->
+      <!-- <small>Enter correct email</small>
+          </div>-->
+    </div>
+    <div class="form-control">
+      <label for="password">Password:</label>
+      <input type="password" formControlName="password" />
+      <small class="validation" *ngIf="error$">{{ error$ | async }}</small>
+      <small class="notify" *ngIf="notify$">{{ notify$ }}</small>
+      <!-- <div
+            class="validation"
+            *ngIf="
+              loginAdminForms.get('password')?.touched &&
+              loginAdminForms.get('password')?.invalid
+            "
+          > -->
+      <!-- <small>Enter correct password</small>
+          </div> -->
+    </div>
+    <button (click)="login()" class="btn btn-primary" type="submit">
+      Login
+    </button>
+    <button (click)="registration()" class="btn btn-primary" type="submit">
+      Register
+    </button>
+  </form>
+</div>

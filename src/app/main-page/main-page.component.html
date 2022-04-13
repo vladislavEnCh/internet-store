@@ -1,0 +1,69 @@
+<div class="slider" style="width: 100%; text-align: center; padding: 0">
+  <ng-image-slider
+    #nav
+    [images]="imageObject"
+    [infinite]="true"
+    [autoSlide]="2"
+    [imageSize]="{ width: '100%', height: '50%' }"
+    slideImage="1"
+    [animationSpeed]="5"
+  ></ng-image-slider>
+  <button class="slide-btn">Order Now</button>
+</div>
+
+<h2 class="sugestion_main_title">Popular Category</h2>
+
+<div class="sugestion_categorys">
+  <div class="sugestion_box" *ngFor="let popularProduct of popularProducts">
+    <div (click)="setType(popularProduct.title)" class="sugestion_category">
+      <img class="sugestion_img" src="{{ popularProduct.photo }}" alt="" />
+    </div>
+    <div class="sugestion_title">{{ popularProduct.title }}</div>
+  </div>
+</div>
+<h2 class="sugestion_main_title">Sugestion Category</h2>
+
+<div class="sugestion_categorys">
+  <div class="sugestion_box" *ngFor="let sugestionProduct of sugestionProducts">
+    <div class="sugestion_category">
+      <img class="sugestion_img" src="{{ sugestionProduct.photo }}" alt="" />
+    </div>
+    <div class="sugestion_title">{{ sugestionProduct.title }}</div>
+  </div>
+</div>
+
+<div class="dashboard" *ngIf="products$; else login">
+  <app-product
+    class="box"
+    *ngFor="let product of products$ | sorting: productService.type"
+    [product]="product"
+  >
+  </app-product>
+
+  <section class="product-banner">
+    <h1 class="heading"><span>deal</span> of the day</h1>
+
+    <div class="box-container">
+      <div class="boxi">
+        <img src="../../assets/images/main-page/product-banner-1.jpg" alt="" />
+        <div class="content">
+          <span>special offer</span>
+          <h3>upto 50% off</h3>
+          <a href="#" class="btn">shop now</a>
+        </div>
+      </div>
+
+      <div class="boxi">
+        <img src="../../assets/images/main-page/product-banner-2.jpg" alt="" />
+        <div class="content">
+          <span>special offer</span>
+          <h3>upto 50% off</h3>
+          <a href="#" class="btn">shop now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<ng-template #login>
+  <h2 class="text-center">Login...</h2>
+</ng-template>

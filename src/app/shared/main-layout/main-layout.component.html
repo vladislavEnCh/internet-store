@@ -1,0 +1,71 @@
+<nav class="nav">
+  <div class="nav_above">
+    <h2 class="cursor logo" [routerLink]="['/']">DEVICE CITY</h2>
+    <div class="nav-input">
+      <img class="img" src="../../../assets/images/main-page/loupe.png" /><input
+        placeholder="Search something"
+        type="text"
+      />
+    </div>
+
+    <ul>
+      <li>
+        <div class="dropdown">
+          <img class="img" src="../../../assets/images/main-page/iphone.png" />
+          Contsct Us
+          <img
+            class="img arrow"
+            src="../../../assets/images/main-page/arrow-black.png"
+          />
+          <div class="dropdown-content">
+            <a href="#">044 284-50-80 </a>
+            <a href="#">067 901-44-70</a>
+            <a href="#">Перезвонить вам?</a>
+          </div>
+        </div>
+      </li>
+      <li routerLinkActive="active">
+        <a
+          (click)="setType('Cart')"
+          [routerLink]="['/cart']"
+          class="cart"
+          href="#"
+        >
+          <img
+            class="img"
+            src="../../../assets/images/main-page/shopping-cart white.png"
+          />
+          Your orders</a
+        >
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/auth']" class="cart" href="#">Sign Up</a>
+      </li>
+    </ul>
+  </div>
+  <div class="nav_below">
+    <ul class="nav_below_ul">
+      <li [routerLink]="['/catalog']" routerLinkActive="active">Catalog</li>
+      <div class="catalog_burger" *ngIf="burgerFlag">
+        <li routerLinkActive="active">
+          <a (click)="setType('Phone')">Phone</a>
+        </li>
+        <li routerLinkActive="active">
+          <a (click)="setType('Tablet')">Tablet</a>
+        </li>
+        <li routerLinkActive="active">
+          <a (click)="setType('Laptop')">Laptop</a>
+        </li>
+        <li routerLinkActive="active">
+          <a (click)="setType('Display')">Display</a>
+        </li>
+      </div>
+
+      <li routerLinkActive="active"><a href="">About Us</a></li>
+      <li routerLinkActive="active"><a href="">Delivery any payments</a></li>
+      <li routerLinkActive="active"><a href="">Blog</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container"><router-outlet></router-outlet></div>
+<app-footer></app-footer>

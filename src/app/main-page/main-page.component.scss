@@ -1,0 +1,144 @@
+.dashboard{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box{
+    margin: 2rem 0 2rem 0;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.slider{
+    margin: 40px 0 0 0;
+    overflow: visible!important ;
+    width:   100% !important ;
+    position: relative;
+}
+.slide-btn{
+position: absolute;
+left: 40%;
+height: 10%;
+border-radius: 10px;
+background-color: rgb(255, 255, 255);
+
+color: #000;
+top: 80%;
+width: 20%;
+border: 2px solid #fff;
+cursor: pointer;
+transition: transform .2s;
+&:hover {
+    transform: scale(1.1); 
+}
+animation: move 10s infinite;
+}
+
+
+  .mover {
+    
+  }
+  
+@keyframes move {
+    0% {
+      transform: scale(1);
+      border: 2px solid #fff;
+    }
+  
+    50% {
+      transform: scale(1.1);
+      border: 2px solid rgb(233, 223, 86);
+    }
+  
+    100% {
+      transform: scale(1);
+      border: 2px solid #fff;
+    }
+  }
+//  ========================================
+.sugestion{
+  position: relative;
+  &_img{
+    width: 90px;
+    margin: 25px 0 0 25px;
+  }
+  &_box{
+    display: flex;
+    margin: 30px;
+    flex-direction: column;
+  }
+  &_title{
+    color: #fff;
+    text-align: center;
+    margin: 5px 0 0 0;
+  }
+  &_categorys{
+    border-radius: 20px;
+    width: 100%;
+    background-color: #2C342C;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &_category{
+   cursor: pointer;
+    
+      border-radius: 100%;
+      min-width: 140px;
+      height: 140px;
+      background-color: #7F927F;
+      z-index: 5;
+      transition: transform .3s;
+      &:hover{
+        transform: scale(1.1);
+      }
+    
+  }
+  &_main_title{
+    margin: 40px  auto  20px;
+    color: #000;
+    text-align: center;
+  }
+}
+// ===================================products buner
+.product-banner{
+
+  .box-container{
+    display: flex;
+    gap:2rem;
+
+    .boxi{
+      flex:0 0 30rem;
+      position: relative;
+      // box-shadow:$box-shadow;
+      border-radius: .5rem;
+      border:2px solid #2C342C;
+      overflow: hidden;
+
+      &:hover img{
+        transform: scale(1.1);
+      }
+
+      img{
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .content{
+        position: absolute;
+        top:50%; left:5%;
+        transform: translateY(-50%);
+
+        span{
+          font-size: 1.7rem;
+          color:#7F927F;
+        }
+
+        h3{
+          padding-top: .5rem;
+          font-size: 2rem;
+          color:#000;
+        }
+      }
+    }
+  }
+}

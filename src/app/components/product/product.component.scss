@@ -1,0 +1,144 @@
+
+.btn {
+    display: inline-block;
+    padding: 0.2rem 1.3rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in;
+    outline: none;
+    border-radius: .5rem;
+    margin: 1rem .5rem 0 ;
+    &:disabled {
+      cursor: not-allowed;
+      background: var(--light-color);
+      color: #111;
+    }
+    &_text{
+        color: black;
+        transition: opacity 1s ease-out;
+        opacity: 1;
+        display: block;
+    }
+  }
+.prod_btn{
+    margin: 10px auto;
+    display: flex;
+    border: 2px solid rgb(0, 0, 0);
+}
+.prod_btn:hover .img{
+    transform: scale(1.2);
+    margin: 0 0 0 -40%;
+}
+.prod_btn:hover .btn_text{
+    opacity: 0;
+   
+}
+.img{
+    transition: all .3s;
+    width: 20px;
+}
+.cart-container{
+ display: flex;
+ flex-direction: column;
+    
+}
+.main-card{
+}
+.btn-block{
+    top: 100%;
+}
+.photo-container{
+    max-width: 100%;
+}
+.card:hover .card_img{transform: scale(1.1);}
+
+.card{
+    cursor: pointer;
+    margin: 10px 5px 0 5px;
+    width: 240px;
+    border-radius: 20px;
+    box-shadow: 6px 3px 30px -14px rgba(0,0,0,0.75);
+    &_features{
+        font-size: 12px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 30px 0 30px;
+    }
+    &_feature{}
+    &_title{
+        margin: 10px 0 0 0;
+    }
+    &:hover{
+        box-shadow: 6px 3px 30px -10px rgba(0,0,0,0.75);
+    }
+    // transform: scale(1.1);
+    // background-color: aquamarine;
+    &_img{
+        cursor: pointer;
+        display: flex;
+  justify-content: center;
+  align-items: center;
+        width: 200px;
+        margin: 0 auto;
+        transition: transform .3s;
+    }
+}
+.box{
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+// ==================================================
+.card_title_price{
+    font-size: 12px;
+    &_discont{
+        margin: 0 0 0 35px;
+        text-decoration: line-through;
+        font-size: 12px;
+        color: #838383;
+    }
+}
+
+// ==========================================Star
+// form {
+//     width: 250px;
+//     margin: 0 auto;
+//     padding: 10px;
+//     border: 1px solid #d9d9d9;
+//   }
+  
+  form p,
+  form input[type="submit"] {
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  #wrapper form input[type="submit"] {
+    border: 1px solid #d9d9d9;
+    background-color: #efefef;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  label {
+    color: grey;
+  }
+  
+  .clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+  }
+  
+  label:hover,
+  label:hover ~ label {
+    color: orange;
+  }
+  
+  input[type="radio"]:checked ~ label {
+    color: orange;
+  }
+//   ===========================================

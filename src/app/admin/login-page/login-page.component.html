@@ -1,0 +1,36 @@
+<form [formGroup]="loginAdminForms" (ngSubmit)="submit()">
+  <h2>Login as administrator</h2>
+  <div class="form-control">
+    <label for="email">Email:</label>
+    <input type="email" formControlName="email" />
+    <div
+      class="validation"
+      *ngIf="
+        loginAdminForms.get('email')?.touched &&
+        loginAdminForms.get('email')?.invalid
+      "
+    >
+      <small>Enter correct email</small>
+    </div>
+  </div>
+  <div class="form-control">
+    <label for="password">Password:</label>
+    <input type="password" formControlName="password" />
+    <div
+      class="validation"
+      *ngIf="
+        loginAdminForms.get('password')?.touched &&
+        loginAdminForms.get('password')?.invalid
+      "
+    >
+      <small>Enter correct password</small>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary"
+    type="submit"
+    [disabled]="loginAdminForms.invalid || submitted"
+  >
+    Submit
+  </button>
+</form>

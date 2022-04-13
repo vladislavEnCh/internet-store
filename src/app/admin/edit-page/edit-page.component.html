@@ -1,0 +1,70 @@
+<div *ngIf="editForm; else loading">
+  <form [formGroup]="editForm" (ngSubmit)="submit()">
+    <h2 class="text-center">Edit your Product here</h2>
+    <div class="form-control">
+      <label for="type">Type:</label>
+      <select formControlName="type" name="type">
+        <option value="Phone">Phone</option>
+        <option value="Tablet">Tablet</option>
+        <option value="Laptop">Laptop</option>
+        <option value="Desktop">Desktop</option>
+      </select>
+      <div
+        class="validation"
+        *ngIf="editForm.get('type')?.touched && editForm.get('type')?.invalid"
+      >
+        <small>Chose product type</small>
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="title">Title:</label>
+      <input type="title" formControlName="title" />
+      <div
+        class="validation"
+        *ngIf="editForm.get('title')?.touched && editForm.get('title')?.invalid"
+      >
+        <small>Write title</small>
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="photo">Photo:</label>
+      <quill-editor formControlName="photo"></quill-editor>
+    </div>
+
+    <div class="form-control">
+      <label for="info">Information:</label>
+      <quill-editor formControlName="info"></quill-editor>
+    </div>
+    <div class="form-control">
+      <label for="price">Price:</label>
+      <input type="price" formControlName="price" />
+      <div
+        class="validation"
+        *ngIf="editForm.get('price')?.touched && editForm.get('price')?.invalid"
+      >
+        <small>Chose product price</small>
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="priceDiscont">Discont Price:</label>
+      <input type="priceDiscont" formControlName="priceDiscont" />
+      <div
+        class="validation"
+        *ngIf="
+          editForm.get('priceDiscont')?.touched &&
+          editForm.get('priceDiscont')?.invalid
+        "
+      >
+        <small>Write price Discont</small>
+      </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="editForm.invalid">
+      Save changes
+    </button>
+  </form>
+</div>
+
+<ng-template class="text-center" #loading>
+  <h2>Loading...</h2>
+</ng-template>
